@@ -1,0 +1,14 @@
+version: '3.7'
+networks:
+  docker_network:
+services:
+  PHP-SRV:
+    image: p8
+    container_name: p8
+    volumes:
+      - /home/mike/work/office/:/var/www/html
+      - /home/mike/work/office/config/apache2.conf:/etc/apache2/apache2.conf
+    networks:
+      - docker_network 
+    ports: 
+      - '8080:80'
